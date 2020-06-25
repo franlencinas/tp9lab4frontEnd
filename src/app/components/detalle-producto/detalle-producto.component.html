@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col border-right">
+      <img src = "assets/images/{{instrumentoEncontrado.imagen}}" alt="Imagen producto"
+        class="imgDetails" />
+      <div class="descripcionInstrumento">
+        <h5>Descipción</h5>
+        <p>{{instrumentoEncontrado.descripcion}}</p>
+      </div>
+    </div>
+    <div class="col">
+      <p class="cantidadVendida">{{instrumentoEncontrado.cantidadVendida}} vendidos</p>
+      <h3 class="tituloDescripcion">{{instrumentoEncontrado.instrumento}}</h3>
+      <h2 class="precio">${{instrumentoEncontrado.precio}}</h2>
+      <br />
+      <p>Marca: {{instrumentoEncontrado.marca}}</p>
+      <p>Modelo: {{instrumentoEncontrado.modelo}}</p>
+      <div *ngIf="instrumentoEncontrado.costoEnvio == 'G'; else elseBlock" class="envioGratis">
+        <img src="assets/images/camion.png" alt="camion"> Envío gratis a todo el país
+      </div>
+      <ng-template #elseBlock>
+        <span class="costoEnvio">Costo de envío interior de Argentina: {{instrumentoEncontrado.costoEnvio}}</span>
+        <br>
+      </ng-template>
+      <br />
+      <button class="btn btn-dark">Agregar al carrito</button>
+    </div>
+  </div>
+  <div class="row">
+    <a class="btn btn-dark" href="/productos">Volver</a>
+  </div>
+</div>

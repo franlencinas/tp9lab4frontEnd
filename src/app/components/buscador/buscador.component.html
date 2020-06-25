@@ -1,0 +1,16 @@
+<div class="container mt-5">
+
+  <div class="row mb-3">
+    <h1>
+      Resultados para: "{{terminoBuscado}}"</h1>
+
+  </div>
+  <div class="row" *ngIf="instrumentosEncontrados.length > 0; else emptySearch ">
+    <app-card-producto (platoSeleccionado)="verDetalle($event)" *ngFor="let instrumento of instrumentosEncontrados"
+      [instrumentoAux]="instrumento"></app-card-producto>
+  </div>
+
+  <ng-template #emptySearch>
+    <span class="text-center">No hay resultados para su búsqueda</span>
+  </ng-template>
+</div>

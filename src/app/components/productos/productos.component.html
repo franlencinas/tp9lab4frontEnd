@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <div class="row mb-3">
+    <h1>
+      Instrumentos</h1>
+  </div>
+  <div class="row">
+    <app-card-producto (instrumentoSeleccionado)="verDetalle($event)" *ngFor="let instrumento of instrumentos"
+      [instrumentoAux]="instrumento">
+    </app-card-producto>
+  </div>
+</div>

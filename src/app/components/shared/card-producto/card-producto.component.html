@@ -1,0 +1,17 @@
+<div class="card mr-4 mb-4" style="width: 20rem;">
+  <img class="card-img-top" src="assets/images/{{instrumentoAux.imagen}}"
+    alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title tituloTarjeta">{{instrumentoAux.instrumento}}</h5>
+    <p class="card-text precio">$ {{instrumentoAux.precio}}</p>
+    <div *ngIf="instrumentoAux.costoEnvio == 'G'; else elseBlock" class="envioGratis">
+      <img src="assets/images/camion.png" alt="camion"> Envío gratis a todo el país
+    </div>
+    <ng-template #elseBlock>
+      <span class="costoEnvio">Costo de envío interior de Argentina: {{instrumentoAux.costoEnvio}}</span>
+      <br>
+    </ng-template>
+    <br>
+    <button (click)="verInstrumento(instrumentoAux.id)" class="btn btn-primary btn-dark">Detalle</button>
+  </div>
+</div>

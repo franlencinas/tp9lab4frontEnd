@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand mb-0 h1" routerLink="">Tienda Musical</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['home']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['dondeEstamos']">¿Donde Estamos?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['productos']">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['abm']">ABM</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Buscar Instrumento"
+        #buscarTexto>
+      <button (click)="buscarInstrumento(buscarTexto.value)" class="btn btn-outline-light my-2 my-sm-0"
+        type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
